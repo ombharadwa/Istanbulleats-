@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Istanbul Eats — Pizza, Shawarma, Burgers &amp; More · Juhapura, Ahmedabad</title>
+<meta name="description" content="Istanbul Eats, Ahmedabad branch. Est. Mumbai. Pizza, Turkish shawarma, grill burgers, tacos, sandwiches and more, on 100 Feet Road, Juhapura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171310;
+    --paper:#FAF6EC;
+    --paper-dim:#F0EADA;
+    --sun:#E8791A;
+    --sun-deep:#C4600F;
+    --flame:#C0392B;
+    --herb:#1B7A3D;
+    --charcoal:#211C17;
+    --line:rgba(23,19,16,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Archivo Black', sans-serif;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--sun-deep);
+    font-weight:600;
+  }
+
+  /* ---------- Signature: perforated sunburst divider ---------- */
+  .dash-band{
+    height:14px; width:100%;
+    background-color:var(--sun);
+    background-image: repeating-linear-gradient(90deg, var(--charcoal) 0 18px, transparent 18px 34px);
+    background-size:34px 100%;
+  }
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,246,236,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--ink);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:1180px; margin:0 auto;
+  }
+  .logo{display:flex; align-items:center; gap:12px;}
+  .sunmark{
+    width:34px; height:34px; border-radius:50%;
+    background: conic-gradient(var(--sun) 0deg 24deg, transparent 24deg 36deg,
+      var(--sun) 36deg 60deg, transparent 60deg 72deg,
+      var(--sun) 72deg 96deg, transparent 96deg 108deg,
+      var(--sun) 108deg 132deg, transparent 132deg 144deg,
+      var(--sun) 144deg 168deg, transparent 168deg 180deg,
+      var(--sun) 180deg 204deg, transparent 204deg 216deg,
+      var(--sun) 216deg 240deg, transparent 240deg 252deg,
+      var(--sun) 252deg 276deg, transparent 276deg 288deg,
+      var(--sun) 288deg 312deg, transparent 312deg 324deg,
+      var(--sun) 324deg 348deg, transparent 348deg 360deg);
+    flex:none;
+  }
+  .logo-text{font-family:'Archivo Black'; font-size:19px; letter-spacing:-0.01em; line-height:1;}
+  .logo-text .sub{
+    display:block; font-family:'JetBrains Mono'; font-size:9px; letter-spacing:0.12em;
+    font-weight:400; text-transform:uppercase; color:var(--charcoal); opacity:0.6; margin-top:3px;
+  }
+  .nav-links{display:flex; gap:32px; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:0.02em;}
+  .nav-links a{position:relative; padding:4px 0;}
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:3px;
+    background:var(--sun); transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--ink); color:var(--paper); padding:11px 20px;
+    font-size:13px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    display:flex; align-items:center; gap:8px;
+  }
+  .nav-cta:hover{background:var(--flame);}
+  .menu-toggle{display:none; background:none; border:none; font-size:26px; color:var(--ink); cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--paper);
+    padding:100px 0 80px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 55% 45% at 88% 15%, rgba(232,121,26,0.25), transparent 60%),
+      radial-gradient(ellipse 45% 40% at 8% 95%, rgba(192,57,43,0.2), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;
+  }
+  .badge-row{display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;}
+  .badge{
+    font-family:'JetBrains Mono'; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    border:1px solid rgba(250,246,236,0.3); padding:5px 12px; border-radius:20px; color:#D9CDBB;
+  }
+  .hero h1{
+    font-size:clamp(36px, 5.6vw, 60px);
+    color:var(--paper);
+    margin:6px 0 20px;
+  }
+  .hero h1 span{color:var(--sun);}
+  .hero p.lead{
+    font-size:16px;
+    max-width:480px;
+    color:#D9CDBB;
+    margin-bottom:32px;
+    text-transform:none;
+    font-family:'Work Sans';
+  }
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 24px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn-primary{background:var(--sun); color:var(--ink);}
+  .btn-primary:hover{background:#ffa04a; transform:translateY(-2px);}
+  .btn-ghost{border:1px solid rgba(250,246,236,0.4); color:var(--paper);}
+  .btn-ghost:hover{background:rgba(250,246,236,0.1); transform:translateY(-2px);}
+
+  /* Ticket card */
+  .ticket-card{
+    position:relative;
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:2px;
+    padding:26px 26px 22px;
+    transform:rotate(1.2deg);
+    box-shadow:0 24px 50px rgba(0,0,0,0.35);
+  }
+  .ticket-card::before, .ticket-card::after{
+    content:''; position:absolute; width:26px; height:26px; background:var(--ink);
+    border-radius:50%; top:50%; transform:translateY(-50%);
+  }
+  .ticket-card::before{left:-13px;}
+  .ticket-card::after{right:-13px;}
+  .ticket-head{
+    display:flex; justify-content:space-between; align-items:center;
+    border-bottom:2px dashed var(--line); padding-bottom:14px; margin-bottom:16px;
+  }
+  .ticket-head .t1{font-family:'Archivo Black'; font-size:15px;}
+  .ticket-head .t2{font-family:'JetBrains Mono'; font-size:11px; color:var(--sun-deep);}
+  .tick-row{display:flex; justify-content:space-between; font-size:14px; padding:8px 0; border-bottom:1px dotted var(--line);}
+  .tick-row .n{font-weight:600;}
+  .tick-row .p{font-family:'JetBrains Mono'; color:var(--flame); font-weight:600;}
+  .ticket-foot{margin-top:16px; font-family:'JetBrains Mono'; font-size:11px; color:var(--charcoal); opacity:.65; text-align:center; letter-spacing:0.06em;}
+
+  /* ---------- Section basics ---------- */
+  section{padding:90px 0;}
+  .section-head{max-width:640px; margin-bottom:50px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); margin-top:12px; color:var(--ink);}
+  .section-head p{color:var(--charcoal); opacity:0.75; margin-top:14px; font-size:15px; text-transform:none; font-family:'Work Sans';}
+
+  /* About */
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center;}
+  .about-visual{
+    aspect-ratio:4/5; position:relative; overflow:hidden;
+    background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .about-visual .sunmark-big{
+    width:60%; aspect-ratio:1;
+    background: conic-gradient(var(--sun) 0deg 24deg, transparent 24deg 36deg,
+      var(--sun) 36deg 60deg, transparent 60deg 72deg,
+      var(--sun) 72deg 96deg, transparent 96deg 108deg,
+      var(--sun) 108deg 132deg, transparent 132deg 144deg,
+      var(--sun) 144deg 168deg, transparent 168deg 180deg,
+      var(--sun) 180deg 204deg, transparent 204deg 216deg,
+      var(--sun) 216deg 240deg, transparent 240deg 252deg,
+      var(--sun) 252deg 276deg, transparent 276deg 288deg,
+      var(--sun) 288deg 312deg, transparent 312deg 324deg,
+      var(--sun) 324deg 348deg, transparent 348deg 360deg);
+    border-radius:50%;
+    opacity:0.9;
+  }
+  .about-visual .label{
+    position:absolute; bottom:22px; left:22px; color:var(--paper);
+    font-family:'JetBrains Mono'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+  }
+  .about-copy p{color:var(--charcoal); margin-bottom:16px; font-size:16px; max-width:540px;}
+  .stat-row{display:flex; gap:36px; margin-top:30px; flex-wrap:wrap;}
+  .stat .n{font-family:'Archivo Black'; font-size:28px; color:var(--flame);}
+  .stat .l{font-family:'JetBrains Mono'; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--charcoal); opacity:.7;}
+
+  /* Menu */
+  .menu-section{background:var(--ink); color:var(--paper);}
+  .menu-section .section-head h2{color:var(--paper);}
+  .menu-section .section-head p{color:#C9BEA9;}
+  .tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px;}
+  .tab{
+    padding:10px 18px; border:1px solid rgba(250,246,236,0.25);
+    font-size:12px; font-family:'JetBrains Mono'; letter-spacing:0.04em; text-transform:uppercase; cursor:pointer;
+    background:transparent; color:#D9CDBB; transition:all .2s ease;
+  }
+  .tab.active, .tab:hover{background:var(--sun); border-color:var(--sun); color:var(--ink); font-weight:600;}
+  .menu-cat{display:none;}
+  .menu-cat.active{display:block;}
+  .cat-block{margin-bottom:34px;}
+  .cat-block h3{
+    font-family:'Archivo Black'; font-size:15px; color:var(--sun);
+    margin-bottom:14px; letter-spacing:0.02em;
+  }
+  .menu-list{display:grid; grid-template-columns:1fr 1fr; gap:0 50px;}
+  .menu-item{
+    padding:14px 0; border-bottom:1px solid rgba(250,246,236,0.12);
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+  }
+  .menu-item .mi-name{font-family:'Work Sans'; font-weight:600; font-size:15px; color:var(--paper);}
+  .menu-item .mi-desc{font-size:12px; color:#8A8069; margin-top:3px;}
+  .menu-item .mi-price{font-family:'JetBrains Mono'; color:var(--sun); font-size:13px; white-space:nowrap; font-weight:600;}
+  .veg .mi-name::before{content:'● '; color:var(--herb); font-size:10px;}
+  .nonveg .mi-name::before{content:'● '; color:var(--flame); font-size:10px;}
+
+  /* Pizza size table */
+  .pizza-table{width:100%; border-collapse:collapse; margin-bottom:10px;}
+  .pizza-table th{
+    font-family:'JetBrains Mono'; font-size:10px; letter-spacing:0.06em; text-transform:uppercase;
+    color:#8A8069; text-align:right; padding:0 0 10px; font-weight:500;
+  }
+  .pizza-table th:first-child{text-align:left;}
+  .pizza-table td{padding:12px 0; border-bottom:1px solid rgba(250,246,236,0.1); vertical-align:top;}
+  .pizza-table td:not(:first-child){text-align:right; font-family:'JetBrains Mono'; font-size:13px; color:var(--sun); white-space:nowrap;}
+  .pizza-table td:first-child{padding-right:16px;}
+  .pizza-table .pn{font-weight:600; font-size:14.5px; color:var(--paper);}
+  .pizza-table .pn.veg::before{content:'● '; color:var(--herb); font-size:9px;}
+  .pizza-table .pn.nonveg::before{content:'● '; color:var(--flame); font-size:9px;}
+  .pizza-table .pd{font-size:11.5px; color:#8A8069; margin-top:2px;}
+  .pizza-scroll{overflow-x:auto;}
+
+  .menu-note{
+    margin-top:30px; font-size:11.5px; color:#8A8069; font-family:'JetBrains Mono'; letter-spacing:0.03em;
+    border-top:1px dashed rgba(250,246,236,0.2); padding-top:18px;
+  }
+
+  /* Gallery */
+  .gal-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:130px; gap:10px;
+  }
+  .gal-item{
+    position:relative; overflow:hidden;
+    display:flex; align-items:flex-end; padding:14px;
+    font-family:'JetBrains Mono'; font-size:10.5px; letter-spacing:0.05em; text-transform:uppercase;
+    color:rgba(250,246,236,0.9);
+  }
+  .gal-item:nth-child(1){grid-column:span 2; grid-row:span 2; background:linear-gradient(150deg,var(--flame),var(--ink));}
+  .gal-item:nth-child(2){background:linear-gradient(150deg,var(--sun),var(--sun-deep));}
+  .gal-item:nth-child(3){background:linear-gradient(150deg,var(--herb),#0f4523);}
+  .gal-item:nth-child(4){grid-row:span 2; background:linear-gradient(200deg,var(--ink),var(--charcoal));}
+  .gal-item:nth-child(5){background:linear-gradient(150deg,var(--sun-deep),var(--sun));}
+  .gal-item:nth-child(6){grid-column:span 2; background:linear-gradient(150deg,var(--charcoal),var(--flame));}
+
+  /* Visit / Contact */
+  .visit{background:var(--paper-dim);}
+  .visit-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .info-list{display:flex; flex-direction:column; gap:24px;}
+  .info-item{display:flex; gap:16px; align-items:flex-start;}
+  .info-icon{
+    width:38px; height:38px; flex:none;
+    border:2px solid var(--ink); display:flex; align-items:center; justify-content:center;
+    color:var(--ink); font-size:15px; background:var(--paper);
+  }
+  .info-item h4{font-family:'Archivo Black'; font-size:14px; margin-bottom:5px; letter-spacing:0.01em;}
+  .info-item p, .info-item a{color:var(--charcoal); font-size:14px; opacity:0.85; text-transform:none;}
+  .info-item a:hover{color:var(--flame); opacity:1;}
+  .map-frame{
+    overflow:hidden; border:2px solid var(--ink);
+    aspect-ratio:4/3;
+  }
+  .map-frame iframe{width:100%; height:100%; border:0;}
+
+  footer{
+    background:var(--ink); color:#8A8069; padding:36px 0; text-align:center;
+    font-size:12.5px; font-family:'JetBrains Mono';
+  }
+  footer a{color:var(--sun);}
+
+  @media (max-width: 860px){
+    .hero-grid, .about-grid, .visit-grid{grid-template-columns:1fr;}
+    .menu-list{grid-template-columns:1fr;}
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .nav-links{
+      position:absolute; top:66px; left:0; right:0; background:var(--paper);
+      flex-direction:column; padding:20px 28px; gap:18px;
+      border-bottom:2px solid var(--ink);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+    .pizza-scroll table{min-width:560px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <div class="sunmark"></div>
+      <div class="logo-text">ISTANBUL EATS<span class="sub">Est. Mumbai · Ahmedabad Branch</span></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="https://wa.me/918999952956" target="_blank" rel="noopener" class="nav-cta">Order on WhatsApp</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<div class="dash-band"></div>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge-row">
+        <span class="badge">Pizza</span>
+        <span class="badge">Shawarma</span>
+        <span class="badge">Burgers</span>
+        <span class="badge">Tacos</span>
+      </div>
+      <h1>One menu.<br>Every craving,<br><span>loaded &amp; grilled.</span></h1>
+      <p class="lead">Istanbul Eats — Ahmedabad branch. Wood-fired pizza, Turkish shawarma, grill burgers, tacos and sandwiches, all made fresh on 100 Feet Road, Juhapura.</p>
+      <div class="btn-row">
+        <a href="#menu" class="btn btn-primary">See Full Menu</a>
+        <a href="#visit" class="btn btn-ghost">Get Directions</a>
+      </div>
+    </div>
+    <div class="ticket-card">
+      <div class="ticket-head">
+        <span class="t1">Order Slip</span>
+        <span class="t2">#IST-01</span>
+      </div>
+      <div class="tick-row"><span class="n">Special Istanbul Pizza (Med)</span><span class="p">₹490</span></div>
+      <div class="tick-row"><span class="n">BBQ Shawarma</span><span class="p">₹140</span></div>
+      <div class="tick-row"><span class="n">Grill Smash Burger</span><span class="p">₹100</span></div>
+      <div class="tick-row"><span class="n">Peri Peri Fries</span><span class="p">₹100</span></div>
+      <div class="ticket-foot">@instanbuleatsofficial · +91 89999 52956</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <div class="sunmark-big"></div>
+      <div class="label">Ahmedabad Branch</div>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">Our Story</p>
+      <h2 style="margin:14px 0 20px;">Mumbai roots, Juhapura table.</h2>
+      <p>Istanbul Eats started in Mumbai and brought the same idea to Ahmedabad: one kitchen, every craving. Wood-fired pizzas sit on the same menu as Turkish shawarma, grill burgers, tacos, and loaded sandwiches — made fresh to order, not pulled from a warmer.</p>
+      <p>Whether you're in for a quick zinger burger or a full Special Istanbul Pizza with the table, this is the neighbourhood's one-stop order.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="n">10+</div><div class="l">Menu Sections</div></div>
+        <div class="stat"><div class="n">Fresh</div><div class="l">Made to Order</div></div>
+        <div class="stat"><div class="n">Mumbai</div><div class="l">Original Roots</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The Menu</p>
+      <h2>Everything, on one order slip.</h2>
+      <p>● green = veg · ● red = non-veg. Update dishes and prices any time your menu changes.</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="pizza">Pizza</button>
+      <button class="tab" data-tab="turkish">Turkish &amp; Shawarma</button>
+      <button class="tab" data-tab="burgers">Burgers</button>
+      <button class="tab" data-tab="more">Sandwiches &amp; Tacos</button>
+      <button class="tab" data-tab="starters">Fries &amp; Starters</button>
+    </div>
+
+    <!-- PIZZA -->
+    <div class="menu-cat active" data-cat="pizza">
+      <div class="cat-block">
+        <h3>Non-Veg Pizza</h3>
+        <div class="pizza-scroll">
+        <table class="pizza-table">
+          <tr><th>Item</th><th>Mini 6"</th><th>Small 8"</th><th>Med 10"</th><th>Large 12"</th></tr>
+          <tr><td><div class="pn nonveg">Chicken Tikka Pizza</div><div class="pd">Tikka chicken, tikka sauce, onion, tomato, black olive</div></td><td>₹140</td><td>₹220</td><td>₹340</td><td>₹490</td></tr>
+          <tr><td><div class="pn nonveg">Peri Peri Chicken Pizza</div><div class="pd">Spicy juicy chicken, bell pepper, paprika, peri peri sauce</div></td><td>₹140</td><td>₹220</td><td>₹340</td><td>₹490</td></tr>
+          <tr><td><div class="pn nonveg">Tandoori Chicken Pizza</div><div class="pd">Tandoori chicken, onion, capsicum, broccoli, olive</div></td><td>₹140</td><td>₹220</td><td>₹340</td><td>₹490</td></tr>
+          <tr><td><div class="pn nonveg">Chicken Keema Pizza</div><div class="pd">Fresh coriander, chicken keema, onion, green olive</div></td><td>₹160</td><td>₹260</td><td>₹380</td><td>₹530</td></tr>
+          <tr><td><div class="pn nonveg">Chicken Kofta Pizza</div><div class="pd">Chicken ball kofta, onion, jalapeno, mushroom</div></td><td>₹160</td><td>₹260</td><td>₹380</td><td>₹530</td></tr>
+          <tr><td><div class="pn nonveg">Butter Chicken Pizza</div><div class="pd">Juicy butter chicken, black olive, jalapeno</div></td><td>₹220</td><td>₹340</td><td>₹460</td><td>₹600</td></tr>
+          <tr><td><div class="pn nonveg">Chicken Malai Pizza</div><div class="pd">Juicy malai chicken, onion, broccoli</div></td><td>₹220</td><td>₹340</td><td>₹460</td><td>₹600</td></tr>
+          <tr><td><div class="pn nonveg">Special Istanbul Pizza</div><div class="pd">Chicken tikka, malai chicken, seekh — fully loaded</div></td><td>₹250</td><td>₹360</td><td>₹490</td><td>₹680</td></tr>
+        </table>
+        </div>
+      </div>
+      <div class="cat-block">
+        <h3>Veg Pizza</h3>
+        <div class="pizza-scroll">
+        <table class="pizza-table">
+          <tr><th>Item</th><th>Mini 6"</th><th>Small 8"</th><th>Med 10"</th><th>Large 12"</th></tr>
+          <tr><td><div class="pn veg">Margherita Pizza</div><div class="pd">Mozzarella cheese, oregano, chilli flakes</div></td><td>₹100</td><td>₹160</td><td>₹240</td><td>₹340</td></tr>
+          <tr><td><div class="pn veg">Gold Corn Pizza</div><div class="pd">Sweet corn, mozzarella cheese, oregano</div></td><td>₹120</td><td>₹180</td><td>₹260</td><td>₹360</td></tr>
+          <tr><td><div class="pn veg">Mexican Pizza</div><div class="pd">Onion, tomato, capsicum, sweet corn, coriander, fresh cream</div></td><td>₹140</td><td>₹200</td><td>₹280</td><td>₹400</td></tr>
+          <tr><td><div class="pn veg">Italian Pizza</div><div class="pd">Onion, capsicum, bell pepper, broccoli, black olive</div></td><td>₹140</td><td>₹200</td><td>₹280</td><td>₹400</td></tr>
+          <tr><td><div class="pn veg">Paneer Tikka Pizza</div><div class="pd">Paneer tikka, onion, tomato, black olive, tikka sauce</div></td><td>₹200</td><td>₹280</td><td>₹380</td><td>₹500</td></tr>
+          <tr><td><div class="pn veg">Peri Peri Pizza</div><div class="pd">Peri peri paneer, hot spicy sauce, bell pepper, paprika</div></td><td>₹200</td><td>₹280</td><td>₹380</td><td>₹500</td></tr>
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TURKISH & SHAWARMA -->
+    <div class="menu-cat" data-cat="turkish">
+      <div class="cat-block">
+        <h3>Turkish Sp. Varieties</h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Dynamite</span><span class="mi-price">₹30</span></div>
+          <div class="menu-item"><span class="mi-name">Burratoo</span><span class="mi-price">₹50</span></div>
+          <div class="menu-item"><span class="mi-name">Crossant</span><span class="mi-price">₹60</span></div>
+          <div class="menu-item"><span class="mi-name">Crunchy Blast</span><span class="mi-price">₹70</span></div>
+          <div class="menu-item"><span class="mi-name">Turkish Roll</span><span class="mi-price">₹60</span></div>
+          <div class="menu-item"><span class="mi-name">Stuffed Garlic Bread</span><span class="mi-price">₹120</span></div>
+        </div>
+      </div>
+      <div class="cat-block">
+        <h3>Turkish Sp. Shawarma <span style="font-family:'JetBrains Mono'; font-size:10px; color:#8A8069; text-transform:none;">(Khaboos / Rumali)</span></h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Tandoori Shawarma</span><span class="mi-price">₹60 / ₹80</span></div>
+          <div class="menu-item"><span class="mi-name">Afghani Shawarma</span><span class="mi-price">₹80 / ₹100</span></div>
+          <div class="menu-item"><span class="mi-name">Lebanese Shawarma</span><span class="mi-price">₹90 / ₹100</span></div>
+          <div class="menu-item"><span class="mi-name">Yufka Shawarma</span><span class="mi-price">₹140</span></div>
+          <div class="menu-item"><span class="mi-name">Crispy Shawarma</span><span class="mi-price">₹150</span></div>
+          <div class="menu-item"><span class="mi-name">BBQ Shawarma</span><span class="mi-price">₹140</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BURGERS -->
+    <div class="menu-cat" data-cat="burgers">
+      <div class="cat-block">
+        <h3>Grill Burger</h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Grill Peti Burger</span><span class="mi-price">₹90</span></div>
+          <div class="menu-item"><span class="mi-name">Grill Mexican Burger</span><span class="mi-price">₹90</span></div>
+          <div class="menu-item"><span class="mi-name">Grill Smash Burger</span><span class="mi-price">₹100</span></div>
+        </div>
+      </div>
+      <div class="cat-block">
+        <h3>Crunchy Zinger Burger</h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Zinger Burger</span><span class="mi-price">₹100</span></div>
+          <div class="menu-item"><span class="mi-name">Tandoori Zinger Burger</span><span class="mi-price">₹120</span></div>
+          <div class="menu-item"><span class="mi-name">Peri Peri Zinger Burger</span><span class="mi-price">₹120</span></div>
+          <div class="menu-item"><span class="mi-name">Tandoori Burger</span><span class="mi-price">₹100</span></div>
+          <div class="menu-item"><span class="mi-name">BBQ Burger</span><span class="mi-price">₹100</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANDWICHES & TACOS -->
+    <div class="menu-cat" data-cat="more">
+      <div class="cat-block">
+        <h3>Sandwich</h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Chicken Sandwich Tikka</span><span class="mi-price">₹100</span></div>
+          <div class="menu-item"><span class="mi-name">Chicken Creamy Sandwich</span><span class="mi-price">₹120</span></div>
+          <div class="menu-item"><span class="mi-name">Chicken Tandoori Sandwich</span><span class="mi-price">₹130</span></div>
+          <div class="menu-item"><span class="mi-name">Club Sandwich</span><span class="mi-price">₹150</span></div>
+          <div class="menu-item veg"><span class="mi-name">Veg Club Sandwich</span><span class="mi-price">₹130</span></div>
+          <div class="menu-item veg"><span class="mi-name">Paneer Sandwich</span><span class="mi-price">₹160</span></div>
+          <div class="menu-item veg"><span class="mi-name">Veg Sandwich</span><span class="mi-price">₹90</span></div>
+        </div>
+      </div>
+      <div class="cat-block">
+        <h3>Tacos</h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Tandoori Tacos</span><span class="mi-price">₹70</span></div>
+          <div class="menu-item"><span class="mi-name">Chicken Tacos</span><span class="mi-price">₹80</span></div>
+          <div class="menu-item"><span class="mi-name">Zinger Tacos</span><span class="mi-price">₹80</span></div>
+          <div class="menu-item veg"><span class="mi-name">Paneer Tacos</span><span class="mi-price">₹80</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRIES & STARTERS -->
+    <div class="menu-cat" data-cat="starters">
+      <div class="cat-block">
+        <h3>Fries</h3>
+        <div class="menu-list">
+          <div class="menu-item veg"><span class="mi-name">Fries</span><span class="mi-price">₹80</span></div>
+          <div class="menu-item veg"><span class="mi-name">Peri Peri Fries</span><span class="mi-price">₹100</span></div>
+          <div class="menu-item veg"><span class="mi-name">Mayo Fries</span><span class="mi-price">₹100</span></div>
+          <div class="menu-item veg"><span class="mi-name">Cheese Fries</span><span class="mi-price">₹120</span></div>
+        </div>
+      </div>
+      <div class="cat-block">
+        <h3>Starter</h3>
+        <div class="menu-list">
+          <div class="menu-item"><span class="mi-name">Popcorn</span><span class="mi-price">₹160</span></div>
+          <div class="menu-item"><span class="mi-name">Al-Faham</span><span class="mi-price">₹250</span></div>
+          <div class="menu-item"><span class="mi-name">Broast</span><span class="mi-price">₹250</span></div>
+          <div class="menu-item"><span class="mi-name">Nuggets</span><span class="mi-price">₹120</span></div>
+          <div class="menu-item"><span class="mi-name">Cheese Nuggets</span><span class="mi-price">₹150</span></div>
+          <div class="menu-item"><span class="mi-name">Open Shawarma</span><span class="mi-price">₹250</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="menu-note">PRICES &amp; ITEMS AS OF YOUR LATEST PRINTED MENU BOARD — UPDATE HERE WHENEVER THEY CHANGE.</p>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Gallery</p>
+      <h2>Off the counter.</h2>
+      <p>Placeholder tiles — swap these for real photos of your pizza, shawarma and burgers.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item"><span>Special Istanbul Pizza</span></div>
+      <div class="gal-item"><span>BBQ Shawarma</span></div>
+      <div class="gal-item"><span>Smash Burger</span></div>
+      <div class="gal-item"><span>Order Counter</span></div>
+      <div class="gal-item"><span>Peri Peri Fries</span></div>
+      <div class="gal-item"><span>Evening Rush</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:34px;">
+        <p class="eyebrow">Visit Us</p>
+        <h2>Find the counter.</h2>
+      </div>
+      <div class="info-list">
+        <div class="info-item">
+          <div class="info-icon">⚑</div>
+          <div>
+            <h4>Address</h4>
+            <p>Arshad Park, Bage Masira‑2, TP 85, 100 Feet Road,<br>Gulzar Park, Juhapura, Ahmedabad, Gujarat 380055</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">☏</div>
+          <div>
+            <h4>WhatsApp Orders</h4>
+            <a href="https://wa.me/918999952956" target="_blank" rel="noopener">+91 89999 52956</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">◎</div>
+          <div>
+            <h4>Instagram</h4>
+            <a href="https://instagram.com/instanbuleatsofficial" target="_blank" rel="noopener">@instanbuleatsofficial</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">⏱</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Daily · 1:00 PM – 11:30 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-row" style="margin-top:30px;">
+        <a href="https://maps.app.goo.gl/ABZUBGMockU8hZor5" target="_blank" rel="noopener" class="btn btn-primary">Open in Google Maps</a>
+      </div>
+    </div>
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=Istanbul+Eats+Arshad+Park+Bage+Masira+2+TP+85+100+Feet+Road+Juhapura+Ahmedabad&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Istanbul Eats location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Istanbul Eats · Est. Mumbai · Ahmedabad Branch · <a href="https://instagram.com/instanbuleatsofficial" target="_blank" rel="noopener">@instanbuleatsofficial</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const tabs = document.querySelectorAll('.tab');
+  const cats = document.querySelectorAll('.menu-cat');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      cats.forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.menu-cat[data-cat="${tab.dataset.tab}"]`).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
